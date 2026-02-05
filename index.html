@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elixirTyper | Space Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <header>
+            <h1>elixirTyper</h1>
+            <div class="stats">
+                Level: <span id="current-level-display">1</span>
+            </div>
+        </header>
+
+        <nav id="level-nav">
+            <button onclick="jumpToLevel(0)">Level 1</button>
+            <button onclick="randomizeLevel()" class="dice-btn">🎲 Random</button>
+            <button onclick="jumpToLevel(14)">Level 15 (Essay)</button>
+            <button onclick="toggleEssayMode()">Essay Practice Only</button>
+        </nav>
+
+        <div id="typing-area">
+            <div id="text-display"></div>
+            <input type="text" id="keyboard-input" autofocus autocomplete="off">
+        </div>
+
+        <div class="controls">
+            <p>Press <strong>Shift + Enter</strong> to restart level.</p>
+        </div>
+    </div>
+    <!-- Level complete modal -->
+    <div id="level-modal" class="modal hidden" aria-hidden="true">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close">&times;</button>
+            <h2>Level Complete!</h2>
+            <div class="modal-stats">
+                <p>WPM: <span id="modal-wpm"></span></p>
+                <p>Avg WPM: <span id="modal-avg-wpm"></span></p>
+                <p>Highest combo (this level): <span id="modal-combo-level"></span></p>
+                <p>Best combo (all levels): <span id="modal-combo-best"></span></p>
+                <p>Greens: <span id="modal-greens"></span></p>
+            </div>
+            <button id="modal-next" class="modal-next">Next Level</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
