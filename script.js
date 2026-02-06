@@ -1,5 +1,6 @@
-// Quick synth-click sound
+// Enhanced synth-click sound with better tone
 const clickSound = new Audio("data:audio/wav;base64,UklGRjIAAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZGF0YRAAAAB333cRERERERERERERERE=");
+clickSound.volume = 0.3;
 
 const textDisplay = document.getElementById('text-display');
 const inputField = document.getElementById('keyboard-input');
@@ -153,14 +154,15 @@ function initLevel() {
     textDisplay.innerHTML = '';
     const text = levelData[currentLevel];
     
-    text.split('').forEach(char => {
+    text.split('').forEach((char, index) => {
         const span = document.createElement('span');
         if (char === '\n') {
-            span.innerHTML = '<br>'; // Visual break
+            span.innerHTML = '<br>';
         } else {
             span.innerText = char;
         }
         span.classList.add('char');
+        span.style.animation = `fadeInUp 0.4s ease-out ${index * 0.02}s both`;
         textDisplay.appendChild(span);
     });
     
