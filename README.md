@@ -1,2 +1,2 @@
 # elixirTyper
-elixirTyper is a free website created using numerous programming languages. elixirTyper allows you to practice touch-typing skills for absolutely no cost.
+elixirTyper is free typing website created by Elixir Studios to help people of all ages practice their touch-typing skills at absolutely no cost.
